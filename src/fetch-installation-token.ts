@@ -28,10 +28,14 @@ export const fetchInstallationToken = async ({
       baseUrl: env.GITHUB_API_URL,
     }),
   });
+  
+
 
   if (installationId === undefined) {
-    const authApp = await app({ type: "app" });
+    const authApp = app({ type: "app" });
     const octokit = getOctokit(authApp.token);
+    console.log(authApp)
+    console.log(octokit.rest.apps.getRepoInstallation({ owner, repo })
     try {
       ({
         data: { id: installationId },

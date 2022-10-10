@@ -34,8 +34,8 @@ export const fetchInstallationToken = async ({
   if (installationId === undefined) {
     const authApp = app({ type: "app" });
     const octokit = getOctokit(authApp.token);
-    console.log(authApp)
-    console.log(octokit.rest.apps.getRepoInstallation({ owner, repo })
+    console.log(authApp);
+    console.log(octokit.rest.apps.getRepoInstallation({ owner, repo });
     try {
       ({
         data: { id: installationId },
